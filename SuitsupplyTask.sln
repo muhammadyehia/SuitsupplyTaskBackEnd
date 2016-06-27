@@ -1,0 +1,87 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuitsupplyTask.Application", "SuitsupplyTask.Application\SuitsupplyTask.Application.csproj", "{3E5AC410-D948-4348-A6AC-A07CC744B9DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuitsupplyTask.Infrastructure", "SuitsupplyTask.Infrastructure\SuitsupplyTask.Infrastructure.csproj", "{80049C7D-0626-4FF3-9706-D1D9BE9B6BC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuitsupplyTask.Core", "SuitsupplyTask.Core\SuitsupplyTask.Core.csproj", "{E0447822-569D-458F-9EB2-ED8AD5B8B0CD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{6AB21771-E043-4DF2-B9C1-AE47AA9BD671}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{D63E0E8C-4F7C-4AD4-8587-D4618829EDE2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{B74BEE3F-D111-497D-B096-21F791ED203B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuitsupplyTask.Core.Test", "SuitsupplyTask.Core.Test\SuitsupplyTask.Core.Test.csproj", "{C03B0901-1048-4C48-A7DD-7ED8AC3D63CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTest", "IntegrationTest", "{660CDE4B-A6D0-4D3B-BCD9-7E52F1DF52DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuitsupplyTask.IntegrationTest", "SuitsupplyTask.IntegrationTest\SuitsupplyTask.IntegrationTest.csproj", "{F093CE09-974B-4844-BD98-F0A64F55C699}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E5AC410-D948-4348-A6AC-A07CC744B9DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E5AC410-D948-4348-A6AC-A07CC744B9DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E5AC410-D948-4348-A6AC-A07CC744B9DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E5AC410-D948-4348-A6AC-A07CC744B9DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80049C7D-0626-4FF3-9706-D1D9BE9B6BC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80049C7D-0626-4FF3-9706-D1D9BE9B6BC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80049C7D-0626-4FF3-9706-D1D9BE9B6BC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80049C7D-0626-4FF3-9706-D1D9BE9B6BC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0447822-569D-458F-9EB2-ED8AD5B8B0CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0447822-569D-458F-9EB2-ED8AD5B8B0CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0447822-569D-458F-9EB2-ED8AD5B8B0CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0447822-569D-458F-9EB2-ED8AD5B8B0CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C03B0901-1048-4C48-A7DD-7ED8AC3D63CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C03B0901-1048-4C48-A7DD-7ED8AC3D63CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C03B0901-1048-4C48-A7DD-7ED8AC3D63CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C03B0901-1048-4C48-A7DD-7ED8AC3D63CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F093CE09-974B-4844-BD98-F0A64F55C699}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F093CE09-974B-4844-BD98-F0A64F55C699}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F093CE09-974B-4844-BD98-F0A64F55C699}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F093CE09-974B-4844-BD98-F0A64F55C699}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3E5AC410-D948-4348-A6AC-A07CC744B9DE} = {6AB21771-E043-4DF2-B9C1-AE47AA9BD671}
+		{80049C7D-0626-4FF3-9706-D1D9BE9B6BC5} = {B74BEE3F-D111-497D-B096-21F791ED203B}
+		{E0447822-569D-458F-9EB2-ED8AD5B8B0CD} = {D63E0E8C-4F7C-4AD4-8587-D4618829EDE2}
+		{C03B0901-1048-4C48-A7DD-7ED8AC3D63CA} = {D63E0E8C-4F7C-4AD4-8587-D4618829EDE2}
+		{F093CE09-974B-4844-BD98-F0A64F55C699} = {660CDE4B-A6D0-4D3B-BCD9-7E52F1DF52DE}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://muhammadyehia.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SuitsupplyTask.Application\\SuitsupplyTask.Application.csproj
+		SccProjectTopLevelParentUniqueName1 = SuitsupplyTask.sln
+		SccProjectName1 = SuitsupplyTask.Application
+		SccLocalPath1 = SuitsupplyTask.Application
+		SccProjectUniqueName2 = SuitsupplyTask.Infrastructure\\SuitsupplyTask.Infrastructure.csproj
+		SccProjectTopLevelParentUniqueName2 = SuitsupplyTask.sln
+		SccProjectName2 = SuitsupplyTask.Infrastructure
+		SccLocalPath2 = SuitsupplyTask.Infrastructure
+		SccProjectUniqueName3 = SuitsupplyTask.Core\\SuitsupplyTask.Core.csproj
+		SccProjectTopLevelParentUniqueName3 = SuitsupplyTask.sln
+		SccProjectName3 = SuitsupplyTask.Core
+		SccLocalPath3 = SuitsupplyTask.Core
+		SccProjectUniqueName4 = SuitsupplyTask.Core.Test\\SuitsupplyTask.Core.Test.csproj
+		SccProjectTopLevelParentUniqueName4 = SuitsupplyTask.sln
+		SccProjectName4 = SuitsupplyTask.Core.Test
+		SccLocalPath4 = SuitsupplyTask.Core.Test
+		SccProjectUniqueName5 = SuitsupplyTask.IntegrationTest\\SuitsupplyTask.IntegrationTest.csproj
+		SccProjectTopLevelParentUniqueName5 = SuitsupplyTask.sln
+		SccProjectName5 = SuitsupplyTask.IntegrationTest
+		SccLocalPath5 = SuitsupplyTask.IntegrationTest
+	EndGlobalSection
+EndGlobal
