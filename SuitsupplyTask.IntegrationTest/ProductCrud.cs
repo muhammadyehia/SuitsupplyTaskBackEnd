@@ -32,14 +32,15 @@ namespace SuitsupplyTask.IntegrationTest
         private ProductsController _productsController;
         private ProductContext _productContext;
         private ProductService _productService;
-       
-        public ProductCrud()
+        private UnitOfWork _unitOfWork;
+        [SetUp]
+        public void SetUp()
         {
 
             _productContext = new ProductContext();
-            var unitOfWork = new UnitOfWork(_productContext);
-            var photoService = new PhotoService(unitOfWork);
-            _productService = new ProductService(unitOfWork, photoService);
+            _unitOfWork = new UnitOfWork(_productContext);
+            var photoService = new PhotoService(_unitOfWork);
+            _productService = new ProductService(_unitOfWork, photoService);
             var httpRequestFileUtils = new Mock<IHttpRequestFileUtils>();
             var photo = new Photo
             {
@@ -52,20 +53,42 @@ namespace SuitsupplyTask.IntegrationTest
 
         }
 
-
-
-        [Test]
-        public async Task ProductController_AddProduct_ShoudAdded()
+        [TearDown]
+        public void TearDown()
         {
-            var model = new ProductModel
+            _productContext.Dispose();
+            _unitOfWork.Dispose();
+        }
+
+        [Test, Isolated]
+        public void ProductServise_AddProduct_ShoudAdded()
+        {
+            var id = Guid.NewGuid();
+            var photo = new Photo
             {
-                Price = 100,
-                Name = "yehia"
+                PhotoId = id
+                ,
+                PhotoName = "muhammad",
+                ContentType = "image/jpg",
+                Content = new byte[100]
             };
-            await _productsController.PostProduct(model);
-            var product = _productService.ProductExists(name: model.Name);
-            product.Should().Be(true);
-        
+            var product = new Product
+            {
+                Id = id
+                ,
+                Price = 100,
+                Name = "yehia",
+                Photo = photo
+            };
+            _productService.AddProduct(product);
+
+            var result = _productService.GetProduct(id);
+            result.ShouldBeEquivalentTo(product);
+            var resultPhoto = _productService.GetProductIncludePhoto(id).Photo;
+
+            resultPhoto.PhotoName.Should().Be(photo.PhotoName);
+            resultPhoto.ContentType.Should().Be(photo.ContentType);
+
         }
     }
 }
