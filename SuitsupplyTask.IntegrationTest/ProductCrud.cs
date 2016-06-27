@@ -76,6 +76,14 @@ namespace SuitsupplyTask.IntegrationTest
 
             resultPhoto.PhotoName.Should().Be(photo.PhotoName);
             resultPhoto.ContentType.Should().Be(photo.ContentType);
+
+            product.Name = "Updated Yehia";
+            product.Price = 200;
+            product.Photo.PhotoName = "Updated muhammad";
+            _productService.UpdateProduct(product);
+            var updatedResult = _productService.GetProduct(id);
+            updatedResult.Name.Should().Be("Updated Yehia");
+            updatedResult.Price.Should().Be(200);
             _productService.DeleteProduct(product);
            var isExsits= _productService.ProductExists(id: product.Id);
             isExsits.Should().Be(false);
