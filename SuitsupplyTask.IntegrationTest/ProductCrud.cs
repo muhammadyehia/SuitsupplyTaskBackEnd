@@ -27,13 +27,13 @@ namespace SuitsupplyTask.IntegrationTest
     /// Summary description for UnitTest1
     /// </summary>
     [TestFixture]
-    public class ProductAdd
+    public class ProductCrud
     {
         private ProductsController _productsController;
         private ProductContext _productContext;
         private ProductService _productService;
        
-        public  ProductAdd()
+        public ProductCrud()
         {
 
             _productContext = new ProductContext();
@@ -41,16 +41,18 @@ namespace SuitsupplyTask.IntegrationTest
             var photoService = new PhotoService(unitOfWork);
             _productService = new ProductService(unitOfWork, photoService);
             var httpRequestFileUtils = new Mock<IHttpRequestFileUtils>();
-            var httpRequest = new HttpRequest(string.Empty, "https://www.google.com", string.Empty);
             var photo = new Photo
             {
                 PhotoName = "muhammad",
-                ContentType = "image/jpg"
+                ContentType = "image/jpg",
+                Content = new byte[100]
             };
-            httpRequestFileUtils.Setup(h => h.GetProductPhoto(httpRequest)).Returns(photo);
+            httpRequestFileUtils.Setup(h => h.GetProductPhoto(It.IsAny<HttpRequest>())).Returns(photo);
             _productsController = new ProductsController(_productService, httpRequestFileUtils.Object);
 
         }
+
+
 
         [Test]
         public async Task ProductController_AddProduct_ShoudAdded()
@@ -63,21 +65,7 @@ namespace SuitsupplyTask.IntegrationTest
             await _productsController.PostProduct(model);
             var product = _productService.ProductExists(name: model.Name);
             product.Should().Be(true);
-        }
-        [Test]
-        public async Task ProductController_AddProduct_ShoudAddedWithImage()
-        {
-            var model = new ProductModel
-            {
-                Price = 100,
-                Name = "yehia1"
-            };
-            await _productsController.PostProduct(model);
-            var products = _productService.GetAllProductsIncludePhotos().FirstOrDefault(p => p.Name == model.Name);
-
-            if (products != null) products.Price.Should().Be(model.Price);
-            if (products != null) products.Photo.ContentType.Should().Be("image/jpg");
-            if (products != null) products.Photo.PhotoName.Should().Be("muhammad");
+        
         }
     }
 }
