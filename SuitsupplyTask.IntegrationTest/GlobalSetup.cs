@@ -1,6 +1,4 @@
-﻿using System;
-using System.Data.Entity.Migrations;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Data.Entity.Migrations;
 using NUnit.Framework;
 
 namespace SuitsupplyTask.IntegrationTest

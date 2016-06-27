@@ -3,10 +3,8 @@ using SuitsupplyTask.Core.Entities;
 
 namespace SuitsupplyTask.Infrastructure
 {
-    using System;
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
 
     public partial class ProductContext : DbContext
     {

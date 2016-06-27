@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SuitsupplyTask.Core.Interfaces
+﻿namespace SuitsupplyTask.Core.Interfaces
 {
     public interface ICommands<T> where T : class
     {
