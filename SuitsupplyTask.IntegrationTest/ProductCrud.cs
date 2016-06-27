@@ -49,7 +49,7 @@ namespace SuitsupplyTask.IntegrationTest
         }
 
         [Test, Isolated]
-        public void ProductServise_AddProduct_ShoudAdded()
+        public void ProductServise_AddAndDeleteProduct_ShoudAddedAndDeleted()
         {
             var id = Guid.NewGuid();
             var photo = new Photo
@@ -76,6 +76,9 @@ namespace SuitsupplyTask.IntegrationTest
 
             resultPhoto.PhotoName.Should().Be(photo.PhotoName);
             resultPhoto.ContentType.Should().Be(photo.ContentType);
+            _productService.DeleteProduct(product);
+           var isExsits= _productService.ProductExists(id: product.Id);
+            isExsits.Should().Be(false);
 
         }
     }
